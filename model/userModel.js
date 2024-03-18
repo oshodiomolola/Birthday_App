@@ -36,9 +36,8 @@ const userSchema = new Schema({
 userSchema.pre("save", function (next) {
   const date = new Date(this.birthday);
   this.birthdayMD = date.toISOString().slice(5, 10);
-  next();
 
-  // calculate the age
+
   const today = new Date();
   const birthDate = new Date(this.birthday);
   let age = today.getFullYear() - birthDate.getFullYear();
@@ -52,7 +51,6 @@ userSchema.pre("save", function (next) {
   }
 
   this.age = age;
-
   next();
 });
 

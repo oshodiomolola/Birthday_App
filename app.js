@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const { connect } = require('./config/config');
+const { connect } = require('./config.js');
 const userRouter = require('./router/userRouter.js');
 const cronJob = require('./utils/cron');
 
